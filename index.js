@@ -1,5 +1,14 @@
 
 
+function winningYear(game) {
+    return game.result === "W";
+}
+
 function superbowlWin(array) {
-    array.find( function(game) { return game[result] === "W" })
+    const winYear = array.find(winningYear)
+    if (winYear) {
+        return winYear.year
+    } else {
+        return undefined
+    }
 }
